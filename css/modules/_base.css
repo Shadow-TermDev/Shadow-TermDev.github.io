@@ -14,13 +14,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-footer {
-  background: var(--bg-dark);
+  align-items: center;
   text-align: center;
-  padding: 20px;
-  margin-top: auto;
-  border-top: 2px solid var(--neon-cyan);
-  box-shadow: 0 -5px 20px rgba(0, 255, 255, 0.2);
 }
