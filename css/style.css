@@ -1,6 +1,6 @@
-@import "./modules/_base.css";
-@import "./modules/_header.css";
-@import "./modules/_menus.css";
-@import "./modules/_content.css";
-@import "./modules/_animations.css";
-@import "./modules/_transitions.css";
+@import url("./modules/_base.css");
+   @import url("./modules/_header.css");
+   @import url("./modules/_menus.css");
+   @import url("./modules/_content.css");
+   @import url("./modules/_animations.css");
+   @import url("./modules/_transitions.css");
