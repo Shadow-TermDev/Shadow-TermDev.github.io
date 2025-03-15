@@ -1,5 +1,6 @@
-@import "modules/_base.css";
-@import "modules/_header.css";
-@import "modules/_menus.css";
-@import "modules/_content.css";
-@import "modules/_animations.css";
+@import "./modules/_base.css";
+@import "./modules/_header.css";
+@import "./modules/_menus.css";
+@import "./modules/_content.css";
+@import "./modules/_animations.css";
+@import "./modules/_transitions.css";
