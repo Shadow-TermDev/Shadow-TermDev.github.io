@@ -1,4 +1,4 @@
-/* Fuentes y configuración global */
+/* Importar fuente para efecto futurista */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
 body {
@@ -11,16 +11,17 @@ body {
   position: relative;
 }
 
-/* Header: Logo y eslogan */
+/* Header: logo y eslogan */
 header {
-  padding: 30px 20px;
+  padding: 60px 20px 20px;  /* se aumenta el padding superior para que no quede tapado */
   background-color: #222;
+  position: relative;
 }
 
 .animated-title {
   font-size: 3rem;
   font-weight: bold;
-  /* Efecto neón multicolor usando gradiente y sombras */
+  /* Efecto neón multicolor: gradiente y sombras intensas */
   background: linear-gradient(45deg, #ff00ff, #00ffff, #ff0000);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -42,11 +43,10 @@ header {
   font-size: 1.2rem;
   margin-top: 10px;
   color: #e0e0e0;
-  /* Opcional: puedes agregar un leve efecto de sombra */
   text-shadow: 0 0 5px #00ffff;
 }
 
-/* Navegación: menú hamburguesa en esquina superior derecha */
+/* Navegación: botón hamburguesa en esquina superior derecha */
 nav {
   position: fixed;
   top: 10px;
@@ -70,6 +70,7 @@ nav {
   background: rgba(0, 0, 0, 1);
 }
 
+/* Menú desplegable */
 #menu {
   display: none;
   position: fixed;
@@ -109,7 +110,7 @@ nav {
 /* Sección principal */
 .main {
   padding: 20px;
-  margin-top: 160px; /* Espacio para header y menú */
+  margin-top: 180px; /* espacio para header y menú */
 }
 
 .main h2 {
@@ -151,10 +152,17 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Responsive ajustes para móviles */
+/* Ajustes responsive para móviles */
 @media (max-width: 600px) {
   .animated-title {
     font-size: 2.5rem;
+  }
+  header {
+    padding-top: 70px;
+  }
+  nav {
+    top: 10px;
+    right: 10px;
   }
   #menu-toggle {
     font-size: 1.5rem;
