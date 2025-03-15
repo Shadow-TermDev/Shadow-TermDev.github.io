@@ -7,15 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1 class="neon-title">Shadow-TermDev</h1>
-        <p id="eslogan"></p>
-        <div class="buttons">
-            <a href="https://github.com/Shadow-TermDev" class="btn">GitHub</a>
-            <a href="https://whatsapp.com/channel/0029Vb9sGo759PwYNmwO2Z2K" class="btn">Canal de WhatsApp</a>
-        </div>
-    </div>
+    <header>
+        <h1 class="animated-title">Shadow-TermDev</h1>
+        <p class="eslogan">Explorando el mundo de la programación en Termux y más.</p>
+    </header>
 
-    <script src="script.js"></script>
+    <nav>
+        <button id="menu-toggle">☰</button>
+        <ul id="menu">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Proyectos</a></li>
+            <li><a href="#">Acerca de</a></li>
+        </ul>
+    </nav>
+
+    <section class="main">
+        <h2>Bienvenido</h2>
+        <p>Explora nuestros proyectos y sumérgete en el mundo de la programación.</p>
+        <a href="https://whatsapp.com/channel/0029Vb9sGo759PwYNmwO2Z2K" target="_blank" class="btn-whatsapp">Unirte al canal de WhatsApp</a>
+    </section>
+
+    <footer>
+        <p>© 2025 Shadow-TermDev | Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById("menu-toggle").addEventListener("click", function() {
+            document.getElementById("menu").classList.toggle("show");
+        });
+    </script>
 </body>
 </html>
