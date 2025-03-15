@@ -1,0 +1,45 @@
+nav {
+  position: relative;
+  z-index: 1000;
+}
+
+#menu-toggle {
+  background: rgba(0, 0, 0, 0.9);
+  border: 2px solid var(--neon-cyan);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1.8rem;
+  padding: 8px 12px;
+  cursor: pointer;
+  box-shadow: 0 0 15px var(--neon-cyan);
+  transition: all 0.3s ease;
+}
+
+#menu {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  border: 2px solid var(--neon-pink);
+  border-radius: 10px;
+  min-width: 180px;
+}
+
+#menu.show {
+  display: block;
+  animation: menuSlide 0.3s ease;
+}
+
+#menu li a {
+  color: var(--text-primary);
+  padding: 12px;
+  display: block;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px var(--neon-pink);
+}
+
+#menu li a:hover {
+  background: rgba(255, 0, 255, 0.1);
+  transform: translateX(5px);
+}

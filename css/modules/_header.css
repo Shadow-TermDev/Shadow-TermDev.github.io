@@ -1,0 +1,29 @@
+header {
+  padding: 15px;
+  background: var(--bg-medium);
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.header-content {
+  text-align: center;
+  flex: 1;
+  min-width: 60%;
+}
+
+.animated-title {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 auto;
+  padding: 0 15px;
+  background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan), var(--neon-red));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: neonGlow 1s ease-in-out infinite alternate;
+}
