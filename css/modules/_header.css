@@ -1,29 +1,30 @@
 header {
   padding: 15px;
-  background: var(--bg-medium);
-  position: relative;
+  background: var(--bg-dark);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
 }
 
 .header-content {
-  text-align: center;
-  flex: 1;
-  min-width: 60%;
+  text-align: left;
 }
 
 .animated-title {
-  font-size: clamp(2rem, 8vw, 3.5rem);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0 auto;
-  padding: 0 15px;
-  background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan), var(--neon-red));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: neonGlow 1s ease-in-out infinite alternate;
+  font-size: clamp(1.8rem, 6vw, 2.5rem);
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px var(--neon-cyan);
+  margin: 0;
+}
+
+.eslogan {
+  font-size: 1rem;
+  color: var(--neon-pink);
+  text-shadow: 0 0 5px var(--neon-pink);
+  margin: 5px 0 0 0;
 }

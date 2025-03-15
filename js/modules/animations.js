@@ -8,8 +8,6 @@ export const initAnimations = () => {
       elementoEslogan.textContent += esloganTexto.charAt(indice);
       indice++;
       setTimeout(escribirEslogan, 100);
-    } else {
-      elementoEslogan.style.textShadow = "0 0 10px var(--neon-cyan)";
     }
   };
 
