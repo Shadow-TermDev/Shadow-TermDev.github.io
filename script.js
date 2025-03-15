@@ -17,13 +17,12 @@ document.addEventListener("DOMContentLoaded", function() {
   escribirEslogan();
 
   // Cerrar menú al hacer clic fuera
-  document.addEventListener("click", function(e) {
-    const menu = document.getElementById("menu");
-    const botonMenu = document.getElementById("menu-toggle");
-    
-    if (!botonMenu.contains(e.target) {
-      menu.classList.remove("show");
-      botonMenu.classList.remove("active");
-    }
-  });
+document.addEventListener("click", function(e) {
+  const menu = document.getElementById("menu");
+  const botonMenu = document.getElementById("menu-toggle");
+  
+  if (!menu.contains(e.target) && !botonMenu.contains(e.target)) {
+    menu.classList.remove("show");
+    botonMenu.classList.remove("active");
+  }
 });

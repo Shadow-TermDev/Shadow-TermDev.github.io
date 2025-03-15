@@ -34,17 +34,25 @@ header {
 }
 
 .animated-title {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  margin: 0;
-  padding-right: 60px;
-  background: linear-gradient(45deg, #ff00ff, #00ffff, #ff0000);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 
-    0 0 10px #ff00ff,
-    0 0 20px #00ffff,
-    0 0 30px #ff0000;
-  animation: neonGlow 1s ease-in-out infinite alternate;
+  /* Añadimos estas propiedades */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80vw;
+  padding-right: 70px; /* Más espacio para el botón */
+}
+
+@media (max-width: 600px) {
+  .animated-title {
+    font-size: clamp(1.8rem, 8vw, 2.8rem); /* Tamaño más adaptable */
+    padding-right: 60px;
+    line-height: 1.2; /* Reduce espacio entre líneas */
+  }
+  
+  nav {
+    top: 15px; /* Posición más ajustada */
+    right: 10px;
+  }
 }
 
 @keyframes neonGlow {
@@ -171,4 +179,48 @@ footer {
   .main {
     padding: 20px 10px;
   }
+}
+
+/* Sección de Proyectos */
+.proyectos-section {
+  border-top: 2px solid #00ffff;
+  box-shadow: 0 -5px 20px rgba(0, 255, 255, 0.2);
+}
+
+.proyecto-card {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid #ff00ff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.proyecto-card:hover {
+  transform: translateX(10px);
+  box-shadow: 0 0 25px #ff00ff;
+}
+
+.btn-neon {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: 1px solid #00ffff;
+  background: transparent;
+  color: #00ffff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.btn-neon:hover {
+  background: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 15px #00ffff;
+}
+
+.icon {
+  filter: drop-shadow(0 0 2px #00ffff);
 }
