@@ -1,125 +1,167 @@
-/* Global */
+/* Fuentes y configuración global */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    position: relative;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
 }
 
-/* Header: logo y eslogan centrados en la parte superior */
+/* Header: Logo y eslogan */
 header {
-    padding: 20px;
-    background-color: #222;
-    position: relative;
+  padding: 30px 20px;
+  background-color: #222;
 }
 
 .animated-title {
-    font-size: 2.5rem;
-    color: cyan;
-    animation: fadeIn 2s ease-in-out;
-    margin: 0;
+  font-size: 3rem;
+  font-weight: bold;
+  /* Efecto neón multicolor usando gradiente y sombras */
+  background: linear-gradient(45deg, #ff00ff, #00ffff, #ff0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff, 0 0 30px #ff0000;
+  animation: neonGlow 1.5s infinite alternate;
+  margin: 0;
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff, 0 0 30px #ff0000;
+  }
+  to {
+    text-shadow: 0 0 20px #ff00ff, 0 0 30px #00ffff, 0 0 40px #ff0000;
+  }
 }
 
 .eslogan {
-    color: #888;
-    font-size: 1.2rem;
-    margin-top: 10px;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #e0e0e0;
+  /* Opcional: puedes agregar un leve efecto de sombra */
+  text-shadow: 0 0 5px #00ffff;
 }
 
-/* Navigation: menú hamburguesa en la esquina superior derecha */
+/* Navegación: menú hamburguesa en esquina superior derecha */
 nav {
-    background-color: transparent;
-    position: absolute;
-    top: 20px;
-    right: 20px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
 }
 
 #menu-toggle {
-    background: rgba(0, 0, 0, 0.5);
-    border: 2px solid #ff00ff;
-    border-radius: 8px;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 5px 10px;
-    text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
-    transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #ff00ff;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-shadow: 0 0 5px #ff00ff;
+  transition: all 0.3s ease;
 }
 
 #menu-toggle:hover {
-    background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 1);
 }
 
 #menu {
-    display: none;
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0 0;
-    background-color: #333;
-    border: 1px solid #444;
-    border-radius: 8px;
-    position: absolute;
-    right: 0;
-    top: 40px;
-    width: 150px;
-    text-align: left;
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 #menu.show {
-    display: block;
+  display: block;
 }
 
 #menu li {
-    padding: 10px;
-    border-bottom: 1px solid #444;
-}
-
-#menu li:last-child {
-    border-bottom: none;
+  margin: 5px 0;
 }
 
 #menu li a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
+  display: block;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid #ff00ff;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-align: left;
 }
 
-/* Main section */
+#menu li a:hover {
+  background: rgba(0, 0, 0, 1);
+  box-shadow: 0 0 10px #ff00ff;
+}
+
+/* Sección principal */
 .main {
-    padding: 20px;
-    margin-top: 150px; /* espacio para que el header se vea completo */
+  padding: 20px;
+  margin-top: 160px; /* Espacio para header y menú */
 }
 
+.main h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff;
+}
+
+.main p {
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+/* Botón de WhatsApp con efecto neón */
 .btn-whatsapp {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: green;
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    box-shadow: 0 0 10px green;
-    transition: 0.3s;
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(45deg, #ff0000, #ff00ff);
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ff00ff;
+  transition: 0.3s;
 }
 
 .btn-whatsapp:hover {
-    background-color: #25D366;
-    box-shadow: 0 0 15px #25D366;
+  background: linear-gradient(45deg, #ff00ff, #ff0000);
+  box-shadow: 0 0 15px #ff00ff;
 }
 
 /* Footer */
 footer {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #222;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #222;
+  font-size: 0.9rem;
+}
+
+/* Responsive ajustes para móviles */
+@media (max-width: 600px) {
+  .animated-title {
+    font-size: 2.5rem;
+  }
+  #menu-toggle {
+    font-size: 1.5rem;
+    padding: 5px;
+  }
+  #menu li a {
     font-size: 0.9rem;
+    padding: 8px;
+  }
 }

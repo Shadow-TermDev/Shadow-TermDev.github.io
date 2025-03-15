@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shadow-TermDev</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shadow-TermDev</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1 class="animated-title">Shadow-TermDev</h1>
-        <!-- El eslogan se llenará con la animación en script.js -->
-        <p id="eslogan" class="eslogan"></p>
-    </header>
+  <header>
+    <h1 class="animated-title">Shadow-TermDev</h1>
+    <!-- El eslogan se completará con la animación en script.js -->
+    <p id="eslogan" class="eslogan"></p>
+  </header>
 
-    <nav>
-        <button id="menu-toggle">☰</button>
-        <ul id="menu">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Proyectos</a></li>
-            <li><a href="#">Acerca de</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <button id="menu-toggle">☰</button>
+    <ul id="menu">
+      <li><a href="https://shadow-termdev.github.io">Inicio</a></li>
+      <li><a href="https://github.com/Shadow-TermDev" target="_blank">Proyectos</a></li>
+      <li><a href="https://whatsapp.com/channel/0029Vb9sGo759PwYNmwO2Z2K" target="_blank">Links</a></li>
+    </ul>
+  </nav>
 
-    <section class="main">
-        <h2>Bienvenido</h2>
-        <p>Explora nuestros proyectos y sumérgete en el mundo de la programación.</p>
-        <a href="https://whatsapp.com/channel/0029Vb9sGo759PwYNmwO2Z2K" target="_blank" class="btn-whatsapp">Unirte al canal de WhatsApp</a>
-    </section>
+  <section class="main">
+    <h2>Bienvenido</h2>
+    <p>Explora nuestros proyectos y sumérgete en el mundo de la programación.</p>
+    <a href="https://whatsapp.com/channel/0029Vb9sGo759PwYNmwO2Z2K" target="_blank" class="btn-whatsapp">
+      Unirte al canal de WhatsApp
+    </a>
+  </section>
 
-    <footer>
-        <p>© 2025 Shadow-TermDev | Todos los derechos reservados.</p>
-    </footer>
+  <footer>
+    <p>© 2025 Shadow-TermDev | Todos los derechos reservados.</p>
+  </footer>
 
-    <script src="script.js"></script>
-    <script>
-        // El menú solo se muestra al tocar el botón
-        document.getElementById("menu-toggle").addEventListener("click", function() {
-            document.getElementById("menu").classList.toggle("show");
-        });
-    </script>
+  <script src="script.js"></script>
+  <script>
+    // Mostrar/ocultar menú al tocar el botón
+    document.getElementById("menu-toggle").addEventListener("click", function() {
+      document.getElementById("menu").classList.toggle("show");
+    });
+  </script>
 </body>
 </html>
