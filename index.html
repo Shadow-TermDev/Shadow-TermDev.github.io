@@ -2,25 +2,25 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
   <title>Shadow-TermDev</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1 class="animated-title">Shadow-TermDev</h1>
-    <!-- El eslogan se completará con la animación en script.js -->
-    <p id="eslogan" class="eslogan"></p>
+    <div class="header-content">
+      <h1 class="animated-title">Shadow-TermDev</h1>
+      <p id="eslogan" class="eslogan"></p>
+    </div>
+    <nav>
+      <button id="menu-toggle">☰</button>
+      <ul id="menu">
+        <li><a href="https://shadow-termdev.github.io">Inicio</a></li>
+        <li><a href="https://github.com/Shadow-TermDev" target="_blank">Proyectos</a></li>
+        <li><a href="https://whatsapp.com/channel/0029Vb9sGo759PwYNmwO2Z2K" target="_blank">Links</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <nav>
-    <button id="menu-toggle">☰</button>
-    <ul id="menu">
-      <li><a href="https://shadow-termdev.github.io">Inicio</a></li>
-      <li><a href="https://github.com/Shadow-TermDev" target="_blank">Proyectos</a></li>
-      <li><a href="https://whatsapp.com/channel/0029Vb9sGo759PwYNmwO2Z2K" target="_blank">Links</a></li>
-    </ul>
-  </nav>
 
   <section class="main">
     <h2>Bienvenido</h2>
@@ -36,9 +36,9 @@
 
   <script src="script.js"></script>
   <script>
-    // El menú se muestra/oculta solo al tocar el botón
     document.getElementById("menu-toggle").addEventListener("click", function() {
       document.getElementById("menu").classList.toggle("show");
+      this.classList.toggle("active"); // Nueva clase para efecto
     });
   </script>
 </body>

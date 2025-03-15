@@ -1,12 +1,29 @@
 document.addEventListener("DOMContentLoaded", function() {
-  const eslogan = "Innovando en Termux y desarrollo.";
-  let index = 0;
-  function escribirTexto() {
-    if (index < eslogan.length) {
-      document.getElementById("eslogan").textContent += eslogan.charAt(index);
-      index++;
-      setTimeout(escribirTexto, 100);
+  // Animación del eslogan
+  const esloganTexto = "Innovando en Termux y desarrollo.";
+  const elementoEslogan = document.getElementById("eslogan");
+  let indice = 0;
+  
+  function escribirEslogan() {
+    if (indice < esloganTexto.length) {
+      elementoEslogan.textContent += esloganTexto.charAt(indice);
+      indice++;
+      setTimeout(escribirEslogan, 100);
+    } else {
+      elementoEslogan.style.textShadow = "0 0 10px #00ffff";
     }
   }
-  escribirTexto();
+  
+  escribirEslogan();
+
+  // Cerrar menú al hacer clic fuera
+  document.addEventListener("click", function(e) {
+    const menu = document.getElementById("menu");
+    const botonMenu = document.getElementById("menu-toggle");
+    
+    if (!botonMenu.contains(e.target) {
+      menu.classList.remove("show");
+      botonMenu.classList.remove("active");
+    }
+  });
 });
