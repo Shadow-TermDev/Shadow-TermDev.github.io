@@ -1,6 +1,9 @@
 export const renderSections = () => {
   fetch('../data/content.json')
-    .then(response => response.json())
+    .then(response => {
+      if (!response.ok) throw new Error('Error cargando contenido');
+      return response.json();
+    })
     .then(data => {
       const main = document.getElementById('app');
       
@@ -8,17 +11,20 @@ export const renderSections = () => {
         const sectionHTML = `
           <section id="${section.id}" class="main ${section.id === 'inicio' ? 'active' : ''}">
             <h2>${section.title}</h2>
-            ${section.cards ? renderCards(section.cards) : `
+            ${section.cards ? renderCards(section.cards) : ''}
+            ${section.links ? renderLinks(section.links) : ''}
+            ${section.content ? `
               <p>${section.content}</p>
               <a href="#proyectos" class="btn-neon neon-border">
                 ${section.button} <span class="icon">⟶</span>
               </a>
-            `}
+            ` : ''}
           </section>
         `;
         main.insertAdjacentHTML('beforeend', sectionHTML);
       });
-    });
+    })
+    .catch(error => console.error('Error:', error));
 };
 
 const renderCards = (cards) => {
@@ -32,3 +38,15 @@ const renderCards = (cards) => {
     </div>
   `).join('');
 };
+
+const renderLinks = (links) => {
+  return links.map(link => `
+    <a href="${link.link}" class="link-card neon-border">
+      <span class="link-icon">${link.icon}</span>
+      <h3>${link.title}</h3>
+      <p>${link.description}</p>
+    </a>
+  `).join('');
+};
+
+
