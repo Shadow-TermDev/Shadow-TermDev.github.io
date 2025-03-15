@@ -3,12 +3,13 @@
 :root {
   --neon-cyan: #00ffff;
   --neon-pink: #ff00ff;
+  --neon-red: #ff0000;
   --bg-dark: #0a0a0a;
   --text-primary: #fff;
 }
 
 body {
-  background: var(--bg-dark) !important; /* Forzar fondo oscuro */
+  background: var(--bg-dark) !important;
   color: var(--text-primary);
   font-family: 'Orbitron', sans-serif;
 }

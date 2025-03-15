@@ -1,4 +1,3 @@
-/* Animaciones neon */
 @keyframes neonGlow {
   from {
     text-shadow: 
@@ -12,19 +11,18 @@
   }
 }
 
-@keyframes sectionFade {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.animated-title {
+  animation: neonGlow 1.5s infinite alternate;
 }
 
-/* Efecto hover neon */
-.neon-hover {
+.btn-neon {
+  border: 2px solid var(--neon-cyan);
+  box-shadow: 0 0 15px var(--neon-pink);
   transition: all 0.3s ease;
 }
 
-.neon-hover:hover {
-  text-shadow: 
-    0 0 5px var(--neon-pink),
-    0 0 10px var(--neon-cyan);
-  transform: scale(1.05);
+.btn-neon:hover {
+  box-shadow: 
+    0 0 25px var(--neon-pink),
+    0 0 35px var(--neon-cyan);
 }

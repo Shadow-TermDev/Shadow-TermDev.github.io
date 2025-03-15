@@ -9,7 +9,7 @@ export const initAnimations = () => {
       indice++;
       setTimeout(escribirEslogan, 100);
     } else {
-      elementoEslogan.style.textShadow = "0 0 10px #00ffff";
+      elementoEslogan.style.textShadow = "0 0 10px var(--neon-cyan)";
     }
   };
 
