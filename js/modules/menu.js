@@ -19,13 +19,24 @@ export const initMenu = () => {
 
   // Navegación suave
   const handleNavigation = (e) => {
-    if (e.target.tagName === 'A') {
-      e.preventDefault();
-      const targetId = e.target.getAttribute("href");
-      document.querySelector(targetId).scrollIntoView({ behavior: "smooth" });
+  if (e.target.tagName === 'A') {
+    e.preventDefault();
+    const targetId = e.target.getAttribute("href");
+    const targetSection = document.querySelector(targetId);
+    
+    if (targetSection) {
+      // Activar sección
+      document.querySelectorAll('.main').forEach(section => {
+        section.classList.remove('active');
+      });
+      targetSection.classList.add('active');
+      
+      // Scroll suave
+      targetSection.scrollIntoView({ behavior: "smooth" });
       closeMenu(e);
     }
-  };
+  }
+};
 
   // Event listeners
   menuToggle.addEventListener("click", toggleMenu);
