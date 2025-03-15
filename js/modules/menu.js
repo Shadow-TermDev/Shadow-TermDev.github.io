@@ -1,42 +1,34 @@
 export const initMenu = () => {
   const menuToggle = document.getElementById("menu-toggle");
   const menu = document.getElementById("menu");
-  
-  // Nuevo: Smooth scroll para los anchors
-  const handleAnchorClick = (e) => {
-    e.preventDefault();
-    const targetId = e.target.getAttribute("href");
-    const targetSection = document.querySelector(targetId);
-    
-    if (targetSection) {
-      targetSection.scrollIntoView({
-        behavior: "smooth",
-        block: "start"
-      });
-      
-      // Cerrar menú después de la navegación
-      menu.classList.remove("show");
-      menuToggle.classList.remove("active");
-    }
-  };
 
-  // Agregar event listeners a los links del menú
-  document.querySelectorAll("#menu a[href^='#']").forEach(link => {
-    link.addEventListener("click", handleAnchorClick);
-  });
-
-  // Código existente para toggle del menú
+  // Función para mostrar/ocultar menú
   const toggleMenu = (e) => {
     e.stopPropagation();
     menu.classList.toggle("show");
     menuToggle.classList.toggle("active");
   };
 
-  const closeMenu = () => {
-    menu.classList.remove("show");
-    menuToggle.classList.remove("active");
+  // Cerrar menú al hacer clic fuera
+  const closeMenu = (e) => {
+    if (!menu.contains(e.target) && !menuToggle.contains(e.target)) {
+      menu.classList.remove("show");
+      menuToggle.classList.remove("active");
+    }
   };
 
+  // Navegación suave
+  const handleNavigation = (e) => {
+    if (e.target.tagName === 'A') {
+      e.preventDefault();
+      const targetId = e.target.getAttribute("href");
+      document.querySelector(targetId).scrollIntoView({ behavior: "smooth" });
+      closeMenu(e);
+    }
+  };
+
+  // Event listeners
   menuToggle.addEventListener("click", toggleMenu);
   document.addEventListener("click", closeMenu);
+  menu.addEventListener("click", handleNavigation);
 };
