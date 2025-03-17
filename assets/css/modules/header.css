@@ -1,0 +1,35 @@
+.header-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title-wrapper {
+  flex-grow: 1;
+  text-align: center;
+  padding-right: 60px; /* Espacio para el botón */
+}
+
+.neon-title {
+  font-size: clamp(2rem, 6vw, 3rem);
+  text-shadow: 
+    0 0 5px var(--neon-cyan),
+    0 0 10px var(--neon-pink);
+  margin: 0;
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleGlow 1.5s infinite alternate;
+}
+
+.eslogan {
+  font-size: 1.2rem;
+  color: var(--neon-pink);
+  text-shadow: 0 0 5px var(--neon-pink);
+  margin-top: 0.5rem;
+}

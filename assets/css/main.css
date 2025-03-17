@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import './modules/header.css';
+@import './modules/menu.css';
+@import './modules/animations.css';
+@import './modules/utilities.css';
+
+:root {
+  --neon-cyan: #00ffff;
+  --neon-pink: #ff00ff;
+  --bg-dark: #0a0a0a;
+  --text-primary: #fff;
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Orbitron', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+}

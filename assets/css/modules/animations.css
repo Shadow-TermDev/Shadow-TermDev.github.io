@@ -1,0 +1,48 @@
+@keyframes titleGlow {
+  from {
+    text-shadow: 
+      0 0 5px var(--neon-cyan),
+      0 0 10px var(--neon-pink);
+  }
+  to {
+    text-shadow: 
+      0 0 20px var(--neon-cyan),
+      0 0 30px var(--neon-pink);
+  }
+}
+
+@keyframes menuSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typewriter {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* Efecto máquina de escribir para el eslogan */
+.typewriter {
+  border-right: 2px solid var(--neon-pink);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+    typing 3s steps(40) 1s normal both,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--neon-pink) }
+}
