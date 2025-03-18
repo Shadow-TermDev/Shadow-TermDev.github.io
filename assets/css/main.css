@@ -31,3 +31,8 @@ h1 {
   position: relative !important;
 }
 
+.neon-title, .section-title {
+  position: relative !important;
+  margin-top: 60px; /* Ajusta según sea necesario */
+}
+
