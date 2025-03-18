@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
 @import './modules/header.css';
 @import './modules/menu.css';
 @import './modules/animations.css';
 @import './modules/utilities.css';
 
-/* Variables globales */
+/* ===== Variables globales ===== */
 :root {
   --neon-cyan: #00ffff;
   --neon-pink: #ff00ff;
@@ -13,25 +14,25 @@
   --font-family: 'Orbitron', sans-serif;
 }
 
-/* Estilos generales */
+/* ===== Estilos generales ===== */
 body {
   background: var(--bg-dark);
   color: var(--text-primary);
   font-family: var(--font-family);
   margin: 0;
   min-height: 100vh;
-  padding-top: 80px; /* Ajustado para no afectar demasiado la posición */
+  padding-top: 80px; /* Ajuste para no afectar demasiado la posición */
   overflow-x: hidden; /* Evita el desplazamiento horizontal */
 }
 
-/* Estilos del footer */
+/* ===== Footer ===== */
 footer {
   margin-top: auto;
   text-align: center; /* Corregido el error de escritura */
   padding: 10px;
 }
 
-/* Títulos */
+/* ===== Títulos ===== */
 h1 {
   margin: 0;
   text-align: center;
@@ -42,7 +43,7 @@ h1 {
   text-align: center;
 }
 
-/* Contenedor principal */
+/* ===== Contenedor principal ===== */
 .content-container {
   padding: 20px;
   max-width: 800px;
