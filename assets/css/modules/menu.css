@@ -22,7 +22,7 @@
 
 .menu-list {
   display: none;
-  position: fixed;
+  position: relative;
   top: 5rem;
   right: 1.5rem;
   background: rgba(0,0,0,0.9);
