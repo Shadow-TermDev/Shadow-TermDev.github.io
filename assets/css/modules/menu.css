@@ -55,3 +55,11 @@
   color: var(--neon-pink);
   text-shadow: 0 0 10px var(--neon-pink);
 }
+
+.menu-list {
+  position: absolute; /* Antes era fixed */
+  top: 3.5rem; /* Ajuste para que no empuje el título */
+  right: 1.5rem;
+  width: max-content; /* Para que no ocupe más espacio del necesario */
+}
+

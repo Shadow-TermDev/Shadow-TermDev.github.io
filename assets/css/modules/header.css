@@ -44,3 +44,8 @@
   margin-top: 60px;
 }
 
+.title-wrapper {
+  position: relative;
+  z-index: 900; /* Asegura que el título no se mueva ni se sobreponga */
+}
+

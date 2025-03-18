@@ -36,3 +36,17 @@ h1 {
   margin-top: 60px; /* Ajusta según sea necesario */
 }
 
+.content-container {
+  padding: 0 20px; /* Agrega margen a los lados */
+  max-width: 800px; /* Limita el ancho para que no se vea muy extendido */
+  margin: auto; /* Centra el contenido */
+}
+
+.section-title {
+  margin: 20px 0;
+}
+
+html, body {
+  overflow-x: hidden; /* Evita desplazamiento horizontal */
+}
+
