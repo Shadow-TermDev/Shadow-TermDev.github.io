@@ -4,49 +4,53 @@
 @import './modules/animations.css';
 @import './modules/utilities.css';
 
+/* Variables globales */
 :root {
   --neon-cyan: #00ffff;
   --neon-pink: #ff00ff;
   --bg-dark: #0a0a0a;
-  --text-primary: #fff;
+  --text-primary: #ffffff;
+  --font-family: 'Orbitron', sans-serif;
 }
 
+/* Estilos generales */
 body {
   background: var(--bg-dark);
   color: var(--text-primary);
-  font-family: 'Orbitron', sans-serif;
+  font-family: var(--font-family);
   margin: 0;
   min-height: 100vh;
-  position: relative;
-  padding-top: 100px;
+  padding-top: 80px; /* Ajustado para no afectar demasiado la posición */
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
 }
 
+/* Estilos del footer */
 footer {
   margin-top: auto;
-  text-aling: center;
+  text-align: center; /* Corregido el error de escritura */
   padding: 10px;
 }
 
+/* Títulos */
 h1 {
-  position: relative !important;
+  margin: 0;
+  text-align: center;
 }
 
 .neon-title, .section-title {
-  position: relative !important;
-  margin-top: 60px; /* Ajusta según sea necesario */
+  margin-top: 40px; /* Ajuste para mejorar la alineación */
+  text-align: center;
 }
 
+/* Contenedor principal */
 .content-container {
-  padding: 0 20px; /* Agrega margen a los lados */
-  max-width: 800px; /* Limita el ancho para que no se vea muy extendido */
-  margin: auto; /* Centra el contenido */
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
 }
 
+/* Evita que los títulos queden pegados al contenido */
 .section-title {
-  margin: 20px 0;
-}
-
-html, body {
-  overflow-x: hidden; /* Evita desplazamiento horizontal */
+  margin-bottom: 20px;
 }
 

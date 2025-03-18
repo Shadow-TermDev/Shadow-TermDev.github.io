@@ -1,21 +1,22 @@
 export const initAnimations = () => {
   const eslogan = document.getElementById('eslogan');
-  if (!eslogan || eslogan.dataset.animated) return; // Evita que se ejecute dos veces
-
-  eslogan.dataset.animated = "true"; // Marca que ya se ejecutó
+  if (!eslogan || eslogan.hasAttribute('data-animated')) return; // Evita ejecución duplicada
+  
+  eslogan.setAttribute('data-animated', 'true'); // Marca como animado
+  
   const texto = "Innovando en Termux y desarrollo";
+  const velocidad = 100; // Milisegundos por letra
   let index = 0;
 
-  eslogan.textContent = ""; // Reinicia el texto antes de escribir
-
-  const typewriter = () => {
+  const escribirTexto = () => {
     if (index < texto.length) {
       eslogan.textContent += texto.charAt(index);
       index++;
-      setTimeout(typewriter, 100);
+      setTimeout(escribirTexto, velocidad);
     }
   };
 
-  typewriter();
+  eslogan.textContent = ""; // Reinicia el texto antes de escribir
+  escribirTexto();
 };
 

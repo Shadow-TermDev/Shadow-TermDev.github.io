@@ -1,8 +1,9 @@
+/* Botón de menú hamburguesa */
 .menu-button {
   position: fixed;
   top: 1.5rem;
   right: 1.5rem;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   border: 2px solid var(--neon-cyan);
   border-radius: 8px;
   color: var(--neon-cyan);
@@ -15,30 +16,32 @@
 }
 
 .menu-button:hover {
-  box-shadow: 
-    0 0 25px var(--neon-pink),
-    0 0 35px var(--neon-cyan);
+  box-shadow: 0 0 25px var(--neon-pink), 0 0 35px var(--neon-cyan);
 }
 
+/* Lista del menú */
 .menu-list {
   display: none;
-  position: relative;
-  top: 5rem;
+  position: absolute; /* Para que no se desplace con el contenido */
+  top: 3.5rem; /* Ajuste para evitar que empuje el título */
   right: 1.5rem;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
   border: 2px solid var(--neon-cyan);
   border-radius: 10px;
   padding: 1rem;
   list-style: none;
   box-shadow: 0 0 20px var(--neon-pink);
+  width: max-content;
   z-index: 1000;
 }
 
+/* Menú activo */
 .menu-list.show {
   display: block;
   animation: menuSlide 0.3s ease;
 }
 
+/* Estilos de los ítems del menú */
 .menu-item {
   margin: 0.8rem 0;
 }
@@ -54,12 +57,5 @@
 .menu-link:hover {
   color: var(--neon-pink);
   text-shadow: 0 0 10px var(--neon-pink);
-}
-
-.menu-list {
-  position: absolute; /* Antes era fixed */
-  top: 3.5rem; /* Ajuste para que no empuje el título */
-  right: 1.5rem;
-  width: max-content; /* Para que no ocupe más espacio del necesario */
 }
 

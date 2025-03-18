@@ -2,32 +2,37 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=no">
   <title>Links | Shadow-TermDev</title>
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body>
+
   <header class="header-container">
-    <div class="title-wrapper">
+    <div class="header-content">
       <h1 class="neon-title">Links</h1>
+      <button id="menu-toggle" class="menu-button">☰</button>
     </div>
-    <button id="menu-toggle" class="menu-button">☰</button>
-    <ul id="menu-list" class="menu-list">
-      <li class="menu-item"><a href="index.html" class="menu-link">Inicio</a></li>
-      <li class="menu-item"><a href="proyectos.html" class="menu-link">Proyectos</a></li>
-      <li class="menu-item"><a href="links.html" class="menu-link">Links</a></li>
-    </ul>
+    <nav>
+      <ul id="menu-list" class="menu-list">
+        <li class="menu-item"><a href="index.html" class="menu-link">Inicio</a></li>
+        <li class="menu-item"><a href="proyectos.html" class="menu-link">Proyectos</a></li>
+        <li class="menu-item"><a href="links.html" class="menu-link">Links</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main class="content-container">
     <h2 class="section-title">🔗 Enlaces Importantes</h2>
+
     <div class="links-grid">
-      <a href="https://github.com/Shadow-TermDev" target="_blank" class="link-card neon-card">
+      <a href="https://github.com/Shadow-TermDev" target="_blank" rel="noopener noreferrer" class="link-card neon-card">
         <span class="link-icon">⚡</span>
         <h3>GitHub Oficial</h3>
         <p>Explora todo nuestro código fuente</p>
       </a>
-      <a href="https://whatsapp.com/channel/0029Vb9sGo759PwYNmwO2Z2K" target="_blank" class="link-card neon-card">
+
+      <a href="https://whatsapp.com/channel/0029Vb9sGo759PwYNmwO2Z2K" target="_blank" rel="noopener noreferrer" class="link-card neon-card">
         <span class="link-icon">📱</span>
         <h3>Canal de WhatsApp</h3>
         <p>Únete a nuestra comunidad</p>
@@ -42,3 +47,4 @@
   <script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>
+

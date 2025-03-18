@@ -1,26 +1,26 @@
 .header-container {
-  position: relative;
-  top: 0;
   width: 100%;
   z-index: 1000;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(0, 0, 0, 0.8); /* Agrega un fondo para evitar superposición */
 }
 
+/* Contenedor del título */
 .title-wrapper {
   flex-grow: 1;
   text-align: center;
   padding-right: 60px; /* Espacio para el botón */
+  position: relative;
+  z-index: 900;
 }
 
+/* Título principal */
 .neon-title {
-  margin-bottom: 20px;
   font-size: clamp(2rem, 6vw, 3rem);
-  text-shadow: 
-    0 0 5px var(--neon-cyan),
-    0 0 10px var(--neon-pink);
+  text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-pink);
   margin: 0;
   background: linear-gradient(45deg, var(--neon-cyan), var(--neon-pink));
   -webkit-background-clip: text;
@@ -28,6 +28,7 @@
   animation: titleGlow 1.5s infinite alternate;
 }
 
+/* Eslogan */
 .eslogan {
   font-size: 1.2rem;
   color: var(--neon-pink);
@@ -35,17 +36,8 @@
   margin-top: 10px;
 }
 
-.title-wrapper {
-  margin-top: 0; /* Restauramos el margen */
-}
-
-/* Solo en la página principal, bajamos el título */
+/* Ajuste solo en la página principal */
 .homepage .title-wrapper {
   margin-top: 60px;
-}
-
-.title-wrapper {
-  position: relative;
-  z-index: 900; /* Asegura que el título no se mueva ni se sobreponga */
 }
 

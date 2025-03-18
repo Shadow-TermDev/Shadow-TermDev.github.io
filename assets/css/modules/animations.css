@@ -1,16 +1,17 @@
+/* Brillo animado del título */
 @keyframes titleGlow {
-  from {
-    text-shadow: 
-      0 0 5px var(--neon-cyan),
-      0 0 10px var(--neon-pink);
+  0% {
+    text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-pink);
   }
-  to {
-    text-shadow: 
-      0 0 20px var(--neon-cyan),
-      0 0 30px var(--neon-pink);
+  50% {
+    text-shadow: 0 0 15px var(--neon-cyan), 0 0 25px var(--neon-pink);
+  }
+  100% {
+    text-shadow: 0 0 20px var(--neon-cyan), 0 0 30px var(--neon-pink);
   }
 }
 
+/* Deslizamiento suave del menú */
 @keyframes menuSlide {
   from {
     opacity: 0;
@@ -22,27 +23,29 @@
   }
 }
 
+/* Efecto máquina de escribir */
 @keyframes typewriter {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-/* Efecto máquina de escribir para el eslogan */
-.typewriter {
-  border-right: none;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: 
-    typing 3s steps(40) 1s normal both,
-    blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: var(--neon-pink) }
+  50% {
+    border-color: transparent;
+  }
 }
+
+/* Aplicar efecto de máquina de escribir */
+.typewriter {
+  border-right: 2px solid var(--neon-pink); /* Agregamos un cursor visible */
+  white-space: nowrap;
+  overflow: hidden;
+  animation: 
+    typewriter 3s steps(40) 1s normal both,
+    blink-caret 0.75s step-end infinite;
+}
+
