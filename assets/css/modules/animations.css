@@ -29,7 +29,7 @@
 
 /* Efecto máquina de escribir para el eslogan */
 .typewriter {
-  border-right: 2px solid var(--neon-pink);
+  border-right: none;
   white-space: nowrap;
   overflow: hidden;
   animation: 
