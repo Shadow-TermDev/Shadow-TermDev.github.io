@@ -36,6 +36,11 @@
 }
 
 .title-wrapper {
-  margin-top: 60px; /* Baja el título sin afectar las otras páginas */
+  margin-top: 0; /* Restauramos el margen */
+}
+
+/* Solo en la página principal, bajamos el título */
+.homepage .title-wrapper {
+  margin-top: 60px;
 }
 
