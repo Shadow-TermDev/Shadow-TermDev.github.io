@@ -34,3 +34,8 @@
   text-shadow: 0 0 5px var(--neon-pink);
   margin-top: 10px;
 }
+
+.title-wrapper {
+  margin-top: 60px; /* Baja el título sin afectar las otras páginas */
+}
+
