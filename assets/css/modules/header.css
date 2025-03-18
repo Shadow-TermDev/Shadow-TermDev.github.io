@@ -16,6 +16,7 @@
 }
 
 .neon-title {
+  margin-bottom: 20px;
   font-size: clamp(2rem, 6vw, 3rem);
   text-shadow: 
     0 0 5px var(--neon-cyan),
@@ -31,5 +32,5 @@
   font-size: 1.2rem;
   color: var(--neon-pink);
   text-shadow: 0 0 5px var(--neon-pink);
-  margin-top: 0.5rem;
+  margin-top: 10px;
 }

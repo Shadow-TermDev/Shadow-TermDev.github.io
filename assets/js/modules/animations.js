@@ -1,10 +1,12 @@
 export const initAnimations = () => {
   const eslogan = document.getElementById('eslogan');
+  if (!eslogan || eslogan.dataset.animated) return; // Evita que se ejecute dos veces
+
+  eslogan.dataset.animated = "true"; // Marca que ya se ejecutó
   const texto = "Innovando en Termux y desarrollo";
   let index = 0;
 
-  // Asegurar que el eslogan esté vacío antes de comenzar
-  eslogan.textContent = ""; 
+  eslogan.textContent = ""; // Reinicia el texto antes de escribir
 
   const typewriter = () => {
     if (index < texto.length) {
