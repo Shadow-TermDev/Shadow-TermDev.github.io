@@ -1,43 +1,64 @@
+/* ===== Header Container ===== */
 .header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  z-index: 1000;
-  padding: 1rem;
+  z-index: 500;
+  padding: 1.25rem 2rem;
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  background: rgba(0, 0, 0, 0.8); /* Agrega un fondo para evitar superposición */
+  gap: 0.5rem;
+  padding-right: 60px;
 }
 
-/* Contenedor del título */
-.title-wrapper {
-  flex-grow: 1;
-  text-align: center;
-  padding-right: 60px; /* Espacio para el botón */
-  position: relative;
-  z-index: 900;
-}
-
-/* Título principal */
-.neon-title {
-  font-size: clamp(2rem, 6vw, 3rem);
-  text-shadow: 0 0 5px var(--neon-cyan), 0 0 10px var(--neon-pink);
-  margin: 0;
-  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-pink));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: titleGlow 1.5s infinite alternate;
-}
-
-/* Eslogan */
+/* ===== Eslogan ===== */
 .eslogan {
-  font-size: 1.2rem;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
   color: var(--neon-pink);
-  text-shadow: 0 0 5px var(--neon-pink);
-  margin-top: 10px;
+  text-shadow: 0 0 10px var(--neon-pink);
+  font-weight: 400;
+  letter-spacing: 1px;
+  opacity: 0.9;
 }
 
-/* Ajuste solo en la página principal */
-.homepage .title-wrapper {
-  margin-top: 60px;
+/* ===== Responsive Header ===== */
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1rem 1.5rem;
+  }
+
+  .header-content {
+    padding-right: 50px;
+  }
+
+  .eslogan {
+    font-size: 0.85rem;
+  }
 }
 
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0.875rem 1rem;
+  }
+
+  .header-content {
+    gap: 0.25rem;
+    padding-right: 45px;
+  }
+
+  .eslogan {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+}

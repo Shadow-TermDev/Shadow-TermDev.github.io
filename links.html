@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -8,43 +8,64 @@
 </head>
 <body>
 
+  <!-- Botón de menú (fuera del header para z-index independiente) -->
+  <button id="menu-toggle" class="menu-button" aria-label="Menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Overlay de menú (fuera del header para z-index independiente) -->
+  <nav class="nav-overlay" id="nav-overlay">
+    <div class="menu-container">
+      <ul class="menu-list" id="menu-list">
+        <li class="menu-item"><a href="index.html" class="menu-link">Inicio</a></li>
+        <li class="menu-item"><a href="proyectos.html" class="menu-link">Proyectos</a></li>
+        <li class="menu-item"><a href="links.html" class="menu-link active">Links</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <header class="header-container">
     <div class="header-content">
       <h1 class="neon-title">Links</h1>
-      <button id="menu-toggle" class="menu-button">☰</button>
     </div>
-    <nav>
-      <ul id="menu-list" class="menu-list">
-        <li class="menu-item"><a href="index.html" class="menu-link">Inicio</a></li>
-        <li class="menu-item"><a href="proyectos.html" class="menu-link">Proyectos</a></li>
-        <li class="menu-item"><a href="links.html" class="menu-link">Links</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <main class="content-container">
-    <h2 class="section-title">🔗 Enlaces Importantes</h2>
+  <main class="main-content content-container">
+    <h2 class="section-title glow-text">🔗 Enlaces Importantes</h2>
 
     <div class="links-grid">
       <a href="https://github.com/Shadow-TermDev" target="_blank" rel="noopener noreferrer" class="link-card neon-card">
-        <span class="link-icon">⚡</span>
+        <div class="link-icon">⚡</div>
         <h3>GitHub Oficial</h3>
-        <p>Explora todo nuestro código fuente</p>
+        <p>Explora todo mi código fuente</p>
+        <span class="link-arrow">→</span>
       </a>
 
-      <a href="https://whatsapp.com/channel/0029Vb9sGo759PwYNmwO2Z2K" target="_blank" rel="noopener noreferrer" class="link-card neon-card">
-        <span class="link-icon">📱</span>
-        <h3>Canal de WhatsApp</h3>
+      <a href="https://github.com/Shadow-TermDev" target="_blank" rel="noopener noreferrer" class="link-card neon-card">
+        <div class="link-icon">💻</div>
+        <h3>Perfil GitHub</h3>
+        <p>Sígueme en GitHub</p>
+        <span class="link-arrow">→</span>
+      </a>
+
+      <a href="https://chat.whatsapp.com/CMFZhqIEdoPIOLRNRC6OsW" target="_blank" rel="noopener noreferrer" class="link-card neon-card">
+        <div class="link-icon">📱</div>
+        <h3>Grupo WhatsApp</h3>
         <p>Únete a nuestra comunidad</p>
+        <span class="link-arrow">→</span>
       </a>
     </div>
   </main>
 
-  <footer>
+  <footer class="footer">
     <p>© 2025 Shadow-TermDev | Todos los derechos reservados.</p>
+    <div class="footer-links">
+      <a href="https://github.com/Shadow-TermDev" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+    </div>
   </footer>
 
   <script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>
-

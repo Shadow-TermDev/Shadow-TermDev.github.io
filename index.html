@@ -8,30 +8,71 @@
 </head>
 <body class="homepage">
 
-  <header class="header-container">
-    <div class="header-content">
-      <h1 class="neon-title">Shadow-TermDev</h1>
-      <p id="eslogan" class="eslogan"></p>
-      <button id="menu-toggle" class="menu-button">☰</button>
-    </div>
-    <nav>
-      <ul id="menu-list" class="menu-list">
-        <li class="menu-item"><a href="index.html" class="menu-link">Inicio</a></li>
+  <!-- Botón de menú (fuera del header para z-index independiente) -->
+  <button id="menu-toggle" class="menu-button" aria-label="Menú">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Overlay de menú (fuera del header para z-index independiente) -->
+  <nav class="nav-overlay" id="nav-overlay">
+    <div class="menu-container">
+      <ul class="menu-list" id="menu-list">
+        <li class="menu-item"><a href="index.html" class="menu-link active">Inicio</a></li>
         <li class="menu-item"><a href="proyectos.html" class="menu-link">Proyectos</a></li>
         <li class="menu-item"><a href="links.html" class="menu-link">Links</a></li>
       </ul>
-    </nav>
+    </div>
+  </nav>
+
+  <header class="header-container">
+    <div class="header-content">
+      <h1 class="neon-title">Shadow-TermDev</h1>
+      <p class="eslogan">Innovando en Termux y desarrollo</p>
+    </div>
   </header>
 
-  <main>
-    <!-- Aquí puedes agregar más contenido en el futuro -->
+  <main class="main-content">
+    <section class="terminal-section">
+      <div class="terminal-container neon-card">
+        <div class="terminal-header">
+          <span class="terminal-button red"></span>
+          <span class="terminal-button yellow"></span>
+          <span class="terminal-button green"></span>
+          <span class="terminal-title">shadow@termux:~$</span>
+        </div>
+        <div class="terminal-body" id="terminal-output">
+          <div class="terminal-line" id="init-line">
+            <span class="command" id="typing-text"></span>
+            <span class="cursor hidden">█</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-section">
+      <div class="intro-content">
+        <h2 class="section-title glow-text">Bienvenido a mi espacio</h2>
+        <p class="intro-text">
+          Desarrollo herramientas y soluciones para Termux, automatización de sistemas 
+          y proyectos open source. Explora mis proyectos y únete a la comunidad.
+        </p>
+        <div class="cta-buttons">
+          <a href="proyectos.html" class="neon-button primary">Ver Proyectos</a>
+          <a href="links.html" class="neon-button secondary">Conectar</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
+  <footer class="footer">
     <p>© 2025 Shadow-TermDev | Todos los derechos reservados.</p>
+    <div class="footer-links">
+      <a href="https://github.com/Shadow-TermDev" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+    </div>
   </footer>
 
   <script type="module" src="./assets/js/main.js"></script>
 </body>
 </html>
-
