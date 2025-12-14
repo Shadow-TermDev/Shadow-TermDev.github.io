@@ -23,7 +23,7 @@ export const initTerminal = () => {
       index++;
       setTimeout(escribirMensaje, 100);
     } else {
-      // Cuando termine de escribir, ocultar el cursor de esta línea y mostrar prompt
+      // Cuando termine de escribir, ocultar el cursor y mostrar prompt en nueva línea
       setTimeout(() => {
         cursor.classList.add('hidden');
         mostrarPrompt();
@@ -31,12 +31,11 @@ export const initTerminal = () => {
     }
   };
 
-  // Función para mostrar el prompt final en UNA SOLA LÍNEA
+  // Función para mostrar el prompt final en NUEVA LÍNEA
   const mostrarPrompt = () => {
     const promptLine = document.createElement('div');
-    promptLine.className = 'terminal-line';
-    // TODO EN UNA SOLA LÍNEA SIN SALTOS
-    promptLine.innerHTML = '<span class="prompt-symbol">➜</span> <span class="prompt-path">~</span> <span class="cursor">█</span>';
+    promptLine.className = 'terminal-line prompt-line';
+    promptLine.innerHTML = '<span class="prompt-symbol">➜</span><span class="prompt-path">~</span><span class="cursor">█</span>';
     
     terminalOutput.appendChild(promptLine);
   };

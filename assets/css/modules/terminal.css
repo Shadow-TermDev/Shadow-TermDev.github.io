@@ -115,12 +115,17 @@
 
 /* ===== Terminal Line ===== */
 .terminal-line {
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
+  display: block;
   position: relative;
   z-index: 3;
   margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.terminal-line.prompt-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   white-space: nowrap;
 }
 
@@ -128,7 +133,6 @@
   color: var(--neon-cyan);
   text-shadow: 0 0 8px var(--neon-cyan);
   font-weight: 600;
-  margin-right: 0.5rem;
   display: inline;
 }
 
@@ -136,36 +140,35 @@
 .prompt-symbol {
   color: #00ff87;
   font-weight: 700;
-  margin-right: 0.3rem;
   text-shadow: 0 0 8px #00ff87;
   font-size: 1.2rem;
-  display: inline;
+  display: inline-block;
 }
 
 .prompt-path {
   color: #0087ff;
   font-weight: 600;
-  margin-right: 0.3rem;
   text-shadow: 0 0 8px #0087ff;
-  display: inline;
+  display: inline-block;
 }
 
 .command {
   color: var(--terminal-green);
   text-shadow: 0 0 5px var(--terminal-green);
-  white-space: nowrap;
   display: inline;
+  word-spacing: normal;
+  letter-spacing: normal;
 }
 
 /* ===== Cursor ===== */
 .cursor {
-  display: inline;
+  display: inline-block;
   background: var(--terminal-green);
   color: #0c0c0c;
   padding: 0 4px;
   box-shadow: 0 0 10px var(--terminal-green);
-  margin-left: 2px;
   animation: blink 1s step-end infinite;
+  vertical-align: baseline;
 }
 
 .cursor.hidden {

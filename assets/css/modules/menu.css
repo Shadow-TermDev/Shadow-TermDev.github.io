@@ -24,6 +24,24 @@
   transition: var(--transition);
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
   backdrop-filter: blur(10px);
+  /* Eliminar highlight azul en móviles */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
+.menu-button:active {
+  transform: scale(0.95);
+  box-shadow: 
+    0 0 25px rgba(0, 255, 255, 0.6),
+    0 0 50px rgba(255, 0, 255, 0.4),
+    inset 0 0 20px rgba(0, 255, 255, 0.3);
 }
 
 .menu-button span {
@@ -54,6 +72,9 @@
 .menu-button.active {
   background: rgba(10, 10, 10, 1);
   border-color: var(--neon-pink);
+  box-shadow: 
+    0 0 30px rgba(255, 0, 255, 0.7),
+    0 0 50px rgba(0, 255, 255, 0.4);
 }
 
 .menu-button.active span:nth-child(1) {
@@ -184,6 +205,23 @@
   border-radius: 10px;
   background: rgba(0, 255, 255, 0.05);
   border: 2px solid transparent;
+  /* Eliminar highlight azul */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  outline: none;
+}
+
+.menu-link:focus {
+  outline: none;
+}
+
+.menu-link:active {
+  transform: scale(0.98);
+  box-shadow: 
+    0 0 30px rgba(255, 0, 255, 0.5),
+    inset 0 0 30px rgba(255, 0, 255, 0.2);
 }
 
 .menu-link::before {
