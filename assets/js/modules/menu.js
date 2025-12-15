@@ -1,41 +1,27 @@
 export const initMenu = () => {
   const menuButton = document.getElementById('menu-toggle');
   const navOverlay = document.getElementById('nav-overlay');
+  const menuContainer = document.querySelector('.menu-container');
   const menuLinks = document.querySelectorAll('.menu-link');
 
-  if (!menuButton || !navOverlay) {
+  if (!menuButton || !navOverlay || !menuContainer) {
     console.error('Error: No se encontraron los elementos del menú.');
     return;
   }
 
   console.log('✓ Elementos del menú encontrados');
 
-  // Variable para rastrear el estado
   let isMenuOpen = false;
-
-  // Toggle menú
-  const toggleMenu = (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-
-    isMenuOpen = !isMenuOpen;
-
-    if (isMenuOpen) {
-      openMenu();
-    } else {
-      closeMenu();
-    }
-  };
 
   // Abrir menú
   const openMenu = () => {
+    isMenuOpen = true;
     navOverlay.classList.add('show');
     menuButton.classList.add('active');
-    isMenuOpen = true;
 
     console.log('Menú: ABIERTO');
 
-    // Forzar estilos críticos mediante JavaScript
+    // Forzar estilos críticos
     navOverlay.style.zIndex = '999998';
     navOverlay.style.position = 'fixed';
     navOverlay.style.top = '0';
@@ -50,50 +36,62 @@ export const initMenu = () => {
     menuButton.style.zIndex = '999999';
     document.body.style.overflow = 'hidden';
     
-    console.log('✓ Estilos forzados aplicados');
-
-    // Agregar listener para cerrar al hacer clic fuera (con delay)
-    setTimeout(() => {
-      document.addEventListener('click', closeMenuOutside);
-    }, 100);
+    console.log('✓ Menú abierto');
   };
 
   // Cerrar menú
   const closeMenu = () => {
+    isMenuOpen = false;
     navOverlay.classList.remove('show');
     menuButton.classList.remove('active');
-    isMenuOpen = false;
+    
+    // Remover estilos forzados para que las transiciones CSS funcionen
+    setTimeout(() => {
+      if (!isMenuOpen) {
+        navOverlay.style.opacity = '';
+        navOverlay.style.visibility = '';
+        navOverlay.style.pointerEvents = '';
+      }
+    }, 400); // Esperar a que termine la transición
     
     document.body.style.overflow = '';
-    navOverlay.style.pointerEvents = 'none';
-    document.removeEventListener('click', closeMenuOutside);
     
     console.log('✓ Menú cerrado');
   };
 
-  // Cerrar menú al hacer clic fuera
-  const closeMenuOutside = (e) => {
-    // Si el clic no fue en el overlay, en el menú container, ni en el botón
-    const menuContainer = navOverlay.querySelector('.menu-container');
+  // Toggle del botón hamburguesa
+  menuButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     
-    if (!menuContainer.contains(e.target) && !menuButton.contains(e.target)) {
-      console.log('Clic fuera detectado, cerrando menú');
+    console.log('Click en botón, estado actual:', isMenuOpen);
+    
+    if (isMenuOpen) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Click en el overlay (fondo oscuro) cierra el menú
+  navOverlay.addEventListener('click', (e) => {
+    // Si el click fue directamente en el overlay (no en el container)
+    if (e.target === navOverlay) {
+      console.log('Click en overlay (fuera del menú)');
       closeMenu();
     }
-  };
+  });
 
-  // Event listener del botón (con toggle completo)
-  menuButton.addEventListener('click', toggleMenu);
-  console.log('✓ Event listener del botón agregado');
+  // Evitar que clicks dentro del container cierren el menú
+  menuContainer.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
 
   // Cerrar menú al hacer clic en un enlace
   menuLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       console.log('Click en enlace del menú');
-      // Pequeño delay para la animación antes de navegar
-      setTimeout(() => {
-        closeMenu();
-      }, 150);
+      closeMenu();
     });
   });
 

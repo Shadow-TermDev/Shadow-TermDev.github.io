@@ -119,6 +119,13 @@
   pointer-events: auto !important;
 }
 
+/* Asegurar que cuando NO esté .show, todo se oculte */
+.nav-overlay:not(.show) {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
 /* ===== Contenedor del Menú ===== */
 .menu-container {
   background: rgba(26, 26, 46, 0.98);
@@ -132,10 +139,22 @@
   backdrop-filter: blur(20px);
   max-width: 500px;
   width: 90%;
-  animation: menuFadeIn 0.5s ease;
   position: relative;
   z-index: 999998;
   margin: auto;
+  opacity: 0;
+  transform: scale(0.9) translateY(-20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.nav-overlay.show .menu-container {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.nav-overlay:not(.show) .menu-container {
+  opacity: 0;
+  transform: scale(0.9) translateY(-20px);
 }
 
 @keyframes menuFadeIn {
@@ -165,6 +184,7 @@
   width: 100%;
   opacity: 0;
   transform: translateX(-30px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .nav-overlay.show .menu-item {
@@ -181,6 +201,13 @@
 
 .nav-overlay.show .menu-item:nth-child(3) {
   animation-delay: 0.3s;
+}
+
+/* Cuando el menú NO está visible, resetear items */
+.nav-overlay:not(.show) .menu-item {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: none;
 }
 
 @keyframes fadeInSlide {
