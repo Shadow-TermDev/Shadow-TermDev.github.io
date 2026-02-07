@@ -35,8 +35,6 @@ export const initMenu = () => {
     
     menuButton.style.zIndex = '999999';
     document.body.style.overflow = 'hidden';
-    
-    console.log('✓ Menú abierto');
   };
 
   // Cerrar menú
@@ -52,15 +50,15 @@ export const initMenu = () => {
         navOverlay.style.visibility = '';
         navOverlay.style.pointerEvents = '';
       }
-    }, 400); // Esperar a que termine la transición
+    }, 400);
     
     document.body.style.overflow = '';
     
     console.log('✓ Menú cerrado');
   };
 
-  // Toggle del botón hamburguesa
-  menuButton.addEventListener('click', (e) => {
+  // Handler para el botón hamburguesa
+  const handleButtonClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
     
@@ -71,37 +69,49 @@ export const initMenu = () => {
     } else {
       openMenu();
     }
-  });
+  };
 
-  // Click en el overlay (fondo oscuro) cierra el menú
-  navOverlay.addEventListener('click', (e) => {
-    // Si el click fue directamente en el overlay (no en el container)
+  // Handler para clicks en el overlay
+  const handleOverlayClick = (e) => {
     if (e.target === navOverlay) {
       console.log('Click en overlay (fuera del menú)');
       closeMenu();
     }
-  });
+  };
 
-  // Evitar que clicks dentro del container cierren el menú
-  menuContainer.addEventListener('click', (e) => {
+  // Handler para prevenir propagación desde el contenedor
+  const handleContainerClick = (e) => {
     e.stopPropagation();
-  });
+  };
 
-  // Cerrar menú al hacer clic en un enlace
-  menuLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      console.log('Click en enlace del menú');
-      closeMenu();
-    });
-  });
+  // Handler SIMPLE para enlaces - funciona en todos los navegadores
+  const handleLinkClick = (e) => {
+    console.log('Click en enlace del menú');
+    
+    // Simplemente cerrar el menú
+    // El enlace navegará naturalmente
+    closeMenu();
+  };
 
-  // Cerrar con tecla Escape
-  document.addEventListener('keydown', (e) => {
+  // Handler para teclado
+  const handleKeyDown = (e) => {
     if (e.key === 'Escape' && isMenuOpen) {
       console.log('Tecla Escape presionada');
       closeMenu();
     }
+  };
+
+  // Agregar event listeners
+  menuButton.addEventListener('click', handleButtonClick);
+  navOverlay.addEventListener('click', handleOverlayClick);
+  menuContainer.addEventListener('click', handleContainerClick);
+  
+  // Para los enlaces: NO preventDefault, dejar navegación natural
+  menuLinks.forEach((link) => {
+    link.addEventListener('click', handleLinkClick);
   });
+  
+  document.addEventListener('keydown', handleKeyDown);
 
   console.log('✓ Menú completamente inicializado');
 };
