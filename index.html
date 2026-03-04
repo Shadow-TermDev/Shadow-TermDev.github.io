@@ -3,20 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=no">
+  <meta name="description" content="Shadow-TermDev - Desarrollo de herramientas para Termux, automatización de sistemas y proyectos open source.">
+  <meta name="keywords" content="Termux, desarrollo, automatización, open source, Python, hacking ético">
+  <meta name="author" content="Shadow-TermDev">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta property="og:title" content="Shadow-TermDev">
+  <meta property="og:description" content="Innovando en Termux y desarrollo">
+  <meta property="og:type" content="website">
   <title>Shadow-TermDev</title>
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 <body class="homepage">
 
   <!-- Botón de menú (fuera del header para z-index independiente) -->
-  <button id="menu-toggle" class="menu-button" aria-label="Menú">
+  <button id="menu-toggle" class="menu-button" aria-label="Menú" aria-expanded="false" aria-controls="nav-overlay">
     <span></span>
     <span></span>
     <span></span>
   </button>
 
   <!-- Overlay de menú (fuera del header para z-index independiente) -->
-  <nav class="nav-overlay" id="nav-overlay">
+  <nav class="nav-overlay" id="nav-overlay" role="navigation" aria-label="Menú principal">
     <div class="menu-container">
       <ul class="menu-list" id="menu-list">
         <li class="menu-item"><a href="index.html" class="menu-link active">Inicio</a></li>

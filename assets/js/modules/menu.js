@@ -18,23 +18,12 @@ export const initMenu = () => {
     isMenuOpen = true;
     navOverlay.classList.add('show');
     menuButton.classList.add('active');
+    menuButton.setAttribute('aria-expanded', 'true');
 
-    console.log('Menú: ABIERTO');
-
-    // Forzar estilos críticos
-    navOverlay.style.zIndex = '999998';
-    navOverlay.style.position = 'fixed';
-    navOverlay.style.top = '0';
-    navOverlay.style.left = '0';
-    navOverlay.style.width = '100vw';
-    navOverlay.style.height = '100vh';
-    navOverlay.style.display = 'flex';
-    navOverlay.style.opacity = '1';
-    navOverlay.style.visibility = 'visible';
-    navOverlay.style.pointerEvents = 'auto';
-    
-    menuButton.style.zIndex = '999999';
-    document.body.style.overflow = 'hidden';
+// Mover estilos críticos a clases CSS predefinidas
+    navOverlay.classList.add('menu-overlay-open');
+    menuButton.classList.add('menu-opened');
+    document.body.classList.add('menu-no-scroll');
   };
 
   // Cerrar menú
@@ -42,19 +31,16 @@ export const initMenu = () => {
     isMenuOpen = false;
     navOverlay.classList.remove('show');
     menuButton.classList.remove('active');
+    menuButton.setAttribute('aria-expanded', 'false');
     
-    // Remover estilos forzados para que las transiciones CSS funcionen
+    // Remover clases CSS predefinidas
     setTimeout(() => {
       if (!isMenuOpen) {
-        navOverlay.style.opacity = '';
-        navOverlay.style.visibility = '';
-        navOverlay.style.pointerEvents = '';
+        navOverlay.classList.remove('menu-overlay-open');
+        menuButton.classList.remove('menu-opened');
+        document.body.classList.remove('menu-no-scroll');
       }
     }, 400);
-    
-    document.body.style.overflow = '';
-    
-    console.log('✓ Menú cerrado');
   };
 
   // Handler para el botón hamburguesa
@@ -107,8 +93,12 @@ export const initMenu = () => {
   menuContainer.addEventListener('click', handleContainerClick);
   
   // Para los enlaces: NO preventDefault, dejar navegación natural
-  menuLinks.forEach((link) => {
-    link.addEventListener('click', handleLinkClick);
+  menuContainer.addEventListener('click', (e) => {
+    const target = e.target.closest('.menu-link');
+    if (target) {
+      console.log('Click detected on menu link');
+      closeMenu();
+    }
   });
   
   document.addEventListener('keydown', handleKeyDown);

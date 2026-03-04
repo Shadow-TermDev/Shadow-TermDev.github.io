@@ -18,6 +18,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
+  animation: fadeInScale 0.6s ease-out 0.4s backwards;
 }
 
 .neon-button::before {
@@ -31,6 +32,21 @@
   background: rgba(255, 255, 255, 0.2);
   transform: translate(-50%, -50%);
   transition: width 0.6s ease, height 0.6s ease;
+}
+
+.neon-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.neon-button:hover::after {
+  left: 100%;
 }
 
 .neon-button:hover::before {
@@ -63,8 +79,9 @@
   box-shadow: 
     0 0 20px var(--neon-cyan),
     0 0 40px var(--neon-cyan),
+    0 0 60px rgba(0, 255, 255, 0.4),
     inset 0 0 20px rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* ===== Secondary Button ===== */
@@ -83,8 +100,9 @@
   box-shadow: 
     0 0 20px var(--neon-pink),
     0 0 40px var(--neon-pink),
+    0 0 60px rgba(255, 0, 255, 0.4),
     inset 0 0 20px rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
 }
 
 /* ===== Button Active State ===== */

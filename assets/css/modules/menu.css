@@ -510,9 +510,47 @@
     gap: 1rem;
   }
 
-  .menu-link.active::after {
-    right: 1rem;
-    font-size: 0.7rem;
-  }
+/* ===== Nuevas clases para optimización de performance ===== */
+
+.menu-overlay-open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.menu-opened {
+  background: rgba(10, 10, 10, 1);
+  border-color: var(--neon-pink);
+  -webkit-box-shadow: 
+    0 0 30px rgba(255, 0, 255, 0.7),
+    0 0 50px rgba(0, 255, 255, 0.4);
+  box-shadow: 
+    0 0 30px rgba(255, 0, 255, 0.7),
+    0 0 50px rgba(0, 255, 255, 0.4);
+}
+
+.menu-opened span:nth-child(1) {
+  -webkit-transform: rotate(45deg) translate(8px, 8px);
+  -ms-transform: rotate(45deg) translate(8px, 8px);
+  transform: rotate(45deg) translate(8px, 8px);
+  background: var(--neon-pink);
+}
+
+.menu-opened span:nth-child(2) {
+  opacity: 0;
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+.menu-opened span:nth-child(3) {
+  -webkit-transform: rotate(-45deg) translate(8px, -8px);
+  -ms-transform: rotate(-45deg) translate(8px, -8px);
+  transform: rotate(-45deg) translate(8px, -8px);
+  background: var(--neon-pink);
+}
+
+.menu-no-scroll {
+  overflow: hidden;
 }
 

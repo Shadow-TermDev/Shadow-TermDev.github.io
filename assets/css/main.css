@@ -61,6 +61,7 @@ body {
   padding: 2rem 1.5rem;
   position: relative;
   z-index: 1;
+  animation: fadeInUp 0.8s ease-out;
 }
 
 .content-container {
@@ -81,6 +82,10 @@ body {
   animation: titleGlow 3s ease-in-out infinite;
   margin: 0;
   letter-spacing: 2px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .section-title {
@@ -112,7 +117,11 @@ body {
   backdrop-filter: blur(10px);
   position: relative;
   z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+  animation: fadeInUp 0.8s ease-out 0.5s backwards;
 }
 
 .footer p {
@@ -162,6 +171,7 @@ body {
   text-align: center;
   position: relative;
   z-index: 1;
+  animation: fadeInUp 0.8s ease-out 0.3s backwards;
 }
 
 .intro-content {
