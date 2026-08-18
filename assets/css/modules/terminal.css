@@ -88,6 +88,8 @@
   color: var(--terminal-green);
   position: relative;
   overflow: hidden;
+  /* Evita que Fira Code convierta "..." en ligadura de elipsis y cree un hueco visual */
+  font-variant-ligatures: none;
 }
 
 /* Efecto de scanline */
@@ -182,13 +184,22 @@
   color: #0c0c0c;
   padding: 0 4px;
   box-shadow: 0 0 10px var(--terminal-green);
-  animation: cursorBlink 1s step-end infinite;
   vertical-align: baseline;
   border-radius: 2px;
 }
 
+/* Durante el tipeo el parpadeo se controla desde JS (sincronizado con la impresión) */
+.cursor.off {
+  opacity: 0;
+}
+
 .cursor.hidden {
   display: none;
+}
+
+/* El cursor del prompt final sí parpadea con CSS */
+.prompt-line .cursor {
+  animation: cursorBlink 1s step-end infinite;
 }
 
 /* ===== Output Lines ===== */

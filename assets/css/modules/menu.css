@@ -48,8 +48,9 @@
   touch-action: manipulation;
 }
 
-.menu-button:focus {
-  outline: none;
+.menu-button:focus-visible {
+  outline: 2px solid var(--neon-pink);
+  outline-offset: 3px;
 }
 
 .menu-button:active {
@@ -509,6 +510,7 @@
   .menu-list {
     gap: 1rem;
   }
+}
 
 /* ===== Nuevas clases para optimización de performance ===== */
 
