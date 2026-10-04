@@ -4,14 +4,14 @@ export const initMenu = () => {
   const menuContainer = document.querySelector('.menu-container');
 
   if (!menuButton || !navOverlay || !menuContainer) {
-    console.error('Error: No se encontraron los elementos del menú.');
+    console.error('Error: Menu elements not found.');
     return;
   }
 
   let isMenuOpen = false;
   let lastFocusedElement = null;
 
-  // Abrir menú
+  // Open menu
   const openMenu = () => {
     isMenuOpen = true;
     lastFocusedElement = document.activeElement;
@@ -21,12 +21,12 @@ export const initMenu = () => {
     menuButton.setAttribute('aria-expanded', 'true');
     document.body.classList.add('menu-no-scroll');
 
-    // Mover el foco al primer enlace del menú
+    // Move focus to the first menu link
     const firstLink = menuContainer.querySelector('.menu-link');
     if (firstLink) firstLink.focus();
   };
 
-  // Cerrar menú
+  // Close menu
   const closeMenu = () => {
     isMenuOpen = false;
     navOverlay.classList.remove('show');
@@ -34,7 +34,7 @@ export const initMenu = () => {
     menuButton.setAttribute('aria-expanded', 'false');
     navOverlay.setAttribute('aria-hidden', 'true');
 
-    // Remover clases tras la transición
+    // Remove classes after the transition
     setTimeout(() => {
       if (!isMenuOpen) {
         navOverlay.classList.remove('menu-overlay-open');
@@ -43,13 +43,13 @@ export const initMenu = () => {
       }
     }, 400);
 
-    // Devolver el foco al elemento que abrió el menú
+    // Return focus to the element that opened the menu
     if (lastFocusedElement && lastFocusedElement !== document.body) {
       lastFocusedElement.focus();
     }
   };
 
-  // Handler para el botón hamburguesa
+  // Handler for the hamburger button
   const handleButtonClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
@@ -61,21 +61,21 @@ export const initMenu = () => {
     }
   };
 
-  // Handler para clicks en el overlay (fuera del menú)
+  // Handler for clicks on the overlay (outside the menu)
   const handleOverlayClick = (e) => {
     if (e.target === navOverlay) {
       closeMenu();
     }
   };
 
-  // Handler para el contenedor: cerrar al pulsar un enlace
+  // Handler for the container: close when a link is pressed
   const handleContainerClick = (e) => {
     if (e.target.closest('.menu-link')) {
       closeMenu();
     }
   };
 
-  // Handler para teclado: Escape y focus trap
+  // Keyboard handler: Escape and focus trap
   const handleKeyDown = (e) => {
     if (e.key === 'Escape' && isMenuOpen) {
       e.preventDefault();
@@ -101,7 +101,7 @@ export const initMenu = () => {
     }
   };
 
-  // Agregar event listeners
+  // Add event listeners
   menuButton.addEventListener('click', handleButtonClick);
   navOverlay.addEventListener('click', handleOverlayClick);
   menuContainer.addEventListener('click', handleContainerClick);

@@ -1,12 +1,12 @@
 const GITHUB_USER = 'Shadow-TermDev';
-// Repos que no se cuentan como "proyectos" (el sitio y el perfil).
-// Añade aquí cualquier repo que quieras excluir del contador y las tarjetas.
+// Repos that are not counted as "projects" (the site and the profile).
+// Add here any repo you want to exclude from the counter and the cards.
 const EXCLUDED_REPOS = ['Shadow-TermDev.github.io', 'Shadow-TermDev'];
 const CACHE_KEY = 'shadow-termdev-projects';
-const CACHE_TTL = 60 * 60 * 1000; // 1 hora
+const CACHE_TTL = 60 * 60 * 1000; // 1 hour
 
 const getPublicRepos = async () => {
-  // Caché en localStorage para no agotar el rate limit de la API pública
+  // Cache in localStorage to avoid exhausting the public API rate limit
   try {
     const cached = localStorage.getItem(CACHE_KEY);
     if (cached) {
@@ -14,17 +14,17 @@ const getPublicRepos = async () => {
       if (Date.now() - timestamp < CACHE_TTL) return data;
     }
   } catch {
-    // caché corrupta o localStorage no disponible: ignorar
+    // corrupt cache or localStorage unavailable: ignore
   }
 
   const res = await fetch(`https://api.github.com/users/${GITHUB_USER}/repos?per_page=100`);
-  if (!res.ok) throw new Error(`Error de GitHub API: ${res.status}`);
+  if (!res.ok) throw new Error(`GitHub API Error: ${res.status}`);
   const data = await res.json();
 
   try {
     localStorage.setItem(CACHE_KEY, JSON.stringify({ timestamp: Date.now(), data }));
   } catch {
-    // localStorage no disponible: ignorar
+    // localStorage unavailable: ignore
   }
 
   return data;
@@ -53,7 +53,7 @@ const createCard = (repo) => {
 
   const desc = document.createElement('p');
   desc.className = 'project-description';
-  desc.textContent = repo.description || 'Proyecto open source de Shadow-TermDev.';
+  desc.textContent = repo.description || 'Shadow-TermDev open source project.';
   card.appendChild(desc);
 
   if (repo.language) {
@@ -73,7 +73,7 @@ const createCard = (repo) => {
   link.target = '_blank';
   link.rel = 'noopener noreferrer';
   link.className = 'neon-button primary';
-  link.appendChild(document.createTextNode('Ver en GitHub '));
+  link.appendChild(document.createTextNode('View on GitHub '));
 
   const icon = document.createElement('span');
   icon.className = 'icon';
@@ -96,24 +96,24 @@ export const initProjects = async () => {
       (repo) => !repo.fork && !repo.archived && !EXCLUDED_REPOS.includes(repo.name)
     );
 
-    countEl.textContent = `${filtered.length} proyectos públicos`;
+    countEl.textContent = `${filtered.length} public projects`;
 
     container.innerHTML = '';
     if (filtered.length === 0) {
       const empty = document.createElement('p');
       empty.className = 'projects-empty';
-      empty.textContent = 'Aún no hay proyectos públicos.';
+      empty.textContent = 'No public projects yet.';
       container.appendChild(empty);
     } else {
       filtered.forEach((repo) => container.appendChild(createCard(repo)));
     }
   } catch (error) {
-    console.error('Error al cargar proyectos:', error);
-    countEl.textContent = 'No se pudo cargar el número de proyectos';
+    console.error('Error loading projects:', error);
+    countEl.textContent = 'Could not load the project count';
     container.innerHTML = '';
     const errorMsg = document.createElement('p');
     errorMsg.className = 'projects-empty';
-    errorMsg.textContent = 'No se pudieron cargar los proyectos.';
+    errorMsg.textContent = 'Could not load the projects.';
     container.appendChild(errorMsg);
   }
 };

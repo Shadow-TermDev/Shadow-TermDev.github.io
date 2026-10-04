@@ -24,8 +24,8 @@
   animation: fadeInScale 0.8s ease-out 0.2s backwards;
 }
 
-/* ===== Eslogan ===== */
-.eslogan {
+/* ===== Tagline ===== */
+.tagline {
   font-size: clamp(0.9rem, 2vw, 1.1rem);
   color: var(--neon-pink);
   text-shadow: 0 0 10px var(--neon-pink);
@@ -48,7 +48,7 @@
     padding-right: 50px;
   }
 
-  .eslogan {
+  .tagline {
     font-size: 0.85rem;
   }
 }
@@ -63,7 +63,7 @@
     padding-right: 45px;
   }
 
-  .eslogan {
+  .tagline {
     font-size: 0.75rem;
     letter-spacing: 0.5px;
   }

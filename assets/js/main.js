@@ -4,17 +4,17 @@ import * as Projects from './modules/projects.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   try {
-    // Inicializar menú
+    // Initialize menu
     Menu.initMenu();
 
-    // Inicializar terminal solo en la página de inicio
+    // Initialize terminal only on the homepage
     if (document.body.classList.contains('homepage')) {
       Terminal.initTerminal();
     }
 
-    // Contador de proyectos (solo actúa en la página de proyectos)
+    // Projects counter (only acts on the projects page)
     Projects.initProjects();
   } catch (error) {
-    console.error('Error al inicializar la página:', error);
+    console.error('Error initializing the page:', error);
   }
 });

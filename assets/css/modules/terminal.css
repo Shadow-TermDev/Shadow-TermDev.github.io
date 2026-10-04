@@ -88,11 +88,11 @@
   color: var(--terminal-green);
   position: relative;
   overflow: hidden;
-  /* Evita que Fira Code convierta "..." en ligadura de elipsis y cree un hueco visual */
+  /* Prevent Fira Code from turning "..." into an ellipsis ligature and creating a visual gap */
   font-variant-ligatures: none;
 }
 
-/* Efecto de scanline */
+/* Scanline effect */
 .terminal-body::before {
   content: '';
   position: absolute;
@@ -111,7 +111,7 @@
   z-index: 1;
 }
 
-/* Scanline animada */
+/* Animated scanline */
 .terminal-body::after {
   content: '';
   position: absolute;
@@ -153,7 +153,7 @@
   display: inline;
 }
 
-/* Estilo ZSH/Powerlevel10k */
+/* ZSH/Powerlevel10k style */
 .prompt-symbol {
   color: #00ff87;
   font-weight: 700;
@@ -188,7 +188,7 @@
   border-radius: 2px;
 }
 
-/* Durante el tipeo el parpadeo se controla desde JS (sincronizado con la impresión) */
+/* During typing, blinking is controlled from JS (synced with printing) */
 .cursor.off {
   opacity: 0;
 }
@@ -197,7 +197,7 @@
   display: none;
 }
 
-/* El cursor del prompt final sí parpadea con CSS */
+/* The final prompt cursor does blink with CSS */
 .prompt-line .cursor {
   animation: cursorBlink 1s step-end infinite;
 }

@@ -4,18 +4,18 @@ export const initTerminal = () => {
   const terminalOutput = document.getElementById('terminal-output');
 
   if (!typingText || !cursor || !terminalOutput) {
-    console.error('Error: No se encontraron los elementos de la terminal.');
+    console.error('Error: Terminal elements not found.');
     return;
   }
 
-  const mensaje = 'Iniciando Terminal...';
-  const typeInterval = 100; // ms por carácter (velocidad constante)
-  const blinkEvery = 5;     // el cursor cambia de estado cada N caracteres (sincronizado con el tipeo)
+  const mensaje = 'Starting Terminal...';
+  const typeInterval = 100; // ms per character (constant speed)
+  const blinkEvery = 5;     // the cursor toggles every N characters (synced with typing)
   let startTime = null;
   let typedCount = 0;
   let cursorVisible = true;
 
-  // Mostrar el cursor antes de empezar a escribir
+  // Show the cursor before starting to type
   cursor.classList.remove('hidden');
 
   const finalizar = () => {
@@ -29,7 +29,7 @@ export const initTerminal = () => {
   const loop = (now) => {
     if (startTime === null) startTime = now;
 
-    // Velocidad basada en tiempo real: sin deriva ni acelerones
+    // Real-time based speed: no drift or bursts
     const elapsed = now - startTime;
     const targetCount = Math.min(Math.floor(elapsed / typeInterval), mensaje.length);
 
@@ -37,7 +37,7 @@ export const initTerminal = () => {
       typedCount = targetCount;
       typingText.textContent = mensaje.slice(0, typedCount);
 
-      // Parpadeo del cursor sincronizado con el ritmo de impresión
+      // Cursor blink synced with the typing rhythm
       if (typedCount % blinkEvery === 0) {
         cursorVisible = !cursorVisible;
         cursor.classList.toggle('off', !cursorVisible);
@@ -51,6 +51,6 @@ export const initTerminal = () => {
     }
   };
 
-  // Pequeña pausa antes de empezar a escribir
+  // Short pause before starting to type
   setTimeout(() => requestAnimationFrame(loop), 500);
 };

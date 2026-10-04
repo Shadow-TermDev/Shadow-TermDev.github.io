@@ -1,6 +1,6 @@
-/* ===== ANIMACIONES (solo keyframes en uso) ===== */
+/* ===== ANIMATIONS (only keyframes in use) ===== */
 
-/* ===== Título Neon Glow ===== */
+/* ===== Neon Title Glow ===== */
 @keyframes titleGlow {
   0%, 100% {
     filter: brightness(1) drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
@@ -53,7 +53,7 @@
   }
 }
 
-/* ===== Float con rotación sutil ===== */
+/* ===== Float with subtle rotation ===== */
 @keyframes floatRotate {
   0%, 100% {
     transform: translateY(0) rotate(0deg);
